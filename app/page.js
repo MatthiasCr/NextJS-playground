@@ -1,11 +1,34 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+import { prisma } from 'db/db.ts'
 
-const inter = Inter({ subsets: ['latin'] })
+const getBooks = async () => {
+  const allBooks = await prisma.book.findMany();
 
-export default function Home() {
+  // return [{ id: 1, title: "Buch1", ... }, { id: 2, title: "Buch2", ... }, ...];
+  return allBooks;
+}
+
+export default async function Home() {
+  const allBooks = await getBooks();
+
   return (
-    <></>
+    <>
+      <h1>Meine Bücher</h1>
+
+      <ul>
+        {allBooks.map(({ id, title, author, description }) => (
+          <li key={id}>
+            ID: {id}
+            <br />
+            Title: {title}
+            <br />
+            Author: {author}
+            <br />
+            About: {description}
+          </li>
+        ))}
+      </ul>
+    </>
   )
 }
