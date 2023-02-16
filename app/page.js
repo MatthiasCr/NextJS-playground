@@ -1,20 +1,14 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import { prisma } from 'db/db.ts'
-
-const getBooks = async () => {
-  const allBooks = await prisma.book.findMany();
-
-  // return [{ id: 1, title: "Buch1", ... }, { id: 2, title: "Buch2", ... }, ...];
-  return allBooks;
-}
+import React from 'react'
+import { getAllBooks, getBook } from 'lib/cms/dbWrapper'
+import Link from 'next/link';
 
 export default async function Home() {
-  const allBooks = await getBooks();
+  const allBooks = await getAllBooks();
+  const book1 = await getBook(1);
 
   return (
     <>
-      <h1>Meine Bücher</h1>
+      <h1>My Books</h1>
 
       <ul>
         {allBooks.map(({ id, title, author, description }) => (
@@ -29,6 +23,9 @@ export default async function Home() {
           </li>
         ))}
       </ul>
+
+      <br /><br />
+      <Link href={"/admin"}>admin</Link>
     </>
   )
 }
