@@ -1,5 +1,5 @@
 import React from 'react'
-import { getAllBooks, getBook } from 'lib/cms/dbWrapper'
+import { getAllBooks, getBook } from '@lib/cms/dbWrapper'
 import Link from 'next/link';
 
 export default async function Home() {
@@ -9,7 +9,6 @@ export default async function Home() {
   return (
     <>
       <h1>My Books</h1>
-
       <ul>
         {allBooks.map(({ id, title, author, description }) => (
           <li key={id}>
@@ -23,9 +22,6 @@ export default async function Home() {
           </li>
         ))}
       </ul>
-
-      <br /><br />
-      <Link href={"/admin"}>admin</Link>
     </>
   )
 }

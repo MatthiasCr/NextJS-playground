@@ -1,8 +1,17 @@
-export default function RootLayout({ children }) {
+import './globals.css'
+import Navbar from './navbar'
+
+function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head />
-      <body>{children}</body>
-    </html>
+      <body>
+        <Navbar />
+        <div className="max-w-screen-2xl mx-auto">
+          {children}
+        </div>
+      </body>
+    </html >
   )
 }
+
+export default RootLayout;

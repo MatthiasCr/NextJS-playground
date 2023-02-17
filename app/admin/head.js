@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <>
-      <title>Homepage</title>
+      <title>Admin Space</title>
     </>
   )
 }

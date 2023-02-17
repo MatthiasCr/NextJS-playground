@@ -27,6 +27,9 @@ function New() {
 
     return (
         <>
+            <h1 className="mt-5 mb-5 text-2xl">
+                Create new Book:
+            </h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="title">Title</label>
                 <br />
@@ -59,7 +62,7 @@ function New() {
             </form>
 
 
-            <Link href={"/"}>back home</Link>
+            <Link href={"/admin"}>back to dashbord</Link>
         </>
     )
 };
