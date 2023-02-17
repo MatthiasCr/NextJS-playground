@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
+import { newBookPath } from '@/lib/routingHelpers';
 
 function Admin() {
   return (
@@ -7,8 +8,8 @@ function Admin() {
       <h1 className="mt-5 mb-5 text-2xl">
         This is admin dashbord
       </h1>
-      <p className="text-lg">Manage your books here!</p>
-      <Link href="/admin/new">New Book</Link>
+      <p className="mb-5 text-lg">Manage your books here!</p>
+      <Link className="btn btn-primary" href={newBookPath()}>New Book</Link>
     </>
   )
 }

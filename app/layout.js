@@ -1,4 +1,5 @@
 import './globals.css'
+import { routingHelpers } from 'lib/routingHelpers'
 import Navbar from './navbar'
 
 function RootLayout({ children }) {

@@ -1,5 +1,4 @@
-import { getAllBooks } from '@lib/cms/dbWrapper'
-import { createBook } from '@lib/cms/dbWrapper.js'
+import { getAllBooks, createBook, updateBook } from 'lib/cms/dbWrapper'
 
 export default async function handler(req, res) {
     switch (req.method) {
