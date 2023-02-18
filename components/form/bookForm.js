@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { TextSmall, TextLarge, Input } from 'components/form/formComponents'
 
 
 function BookForm({ oldBook }) {
@@ -42,41 +43,12 @@ function BookForm({ oldBook }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="title">Title</label>
-      <br />
-      <textarea
-        type="text"
-        id="title"
-        value={title}
-        onChange={(e) => { setTitle(e.target.value) }}
-        className="w-full boder bg-slate-100 border  border-slate-300 text-xl rounded-md focus:outline-sky-600"
-        required
-      />
-      <br />
-      <label htmlFor="last">Author</label>
-      <br />
-      <textarea
-        type="text"
-        id="author"
-        value={author}
-        onChange={(e) => { setAuthor(e.target.value) }}
-        className="w-full boder bg-slate-100 border border-slate-300 text-xl rounded-md focus:outline-sky-600"
+      <TextSmall attribute="title" label="Title" state={title} setState={setTitle} />
+      <TextSmall attribute="author" label="Author" state={author} setState={setAuthor} />
+      <TextLarge attribute="description" label="Description" state={description} setState={setDescription} />
 
-      />
-      <br />
-      <label htmlFor="last">Description</label>
-      <br />
-      <textarea
-        type="text"
-        id="author"
-        value={description}
-        onChange={(e) => { setDescription(e.target.value) }}
-        className="w-full boder bg-slate-100 border border-slate-300 text-xl rounded-md focus:outline-sky-600"
-
-      />
-      <button className="btn btn-primary" type="submit">Publish</button>
+      <button className="btn btn-primary" type="submit">{`Publish ${oldBook != null ? "changes" : "book"}`}</button>
     </form>
-
   )
 }
 

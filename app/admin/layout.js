@@ -1,5 +1,6 @@
 import { getAllBooks } from "@/lib/cms/dbWrapper";
-import Book_component from "./book_component";
+import BookComponent from "./bookComponent";
+
 
 export const revalidate = 10;
 
@@ -12,17 +13,21 @@ async function AdminLayout({ children }) {
       <div className="px-10 pt-10 w-full flex flex-row">
 
         {/* All Books Sidebar */}
-        <div className="w-1/3 mr-10 ">
-          <h1 className="mt-5 mb-5 text-2xl">All Books:</h1>
-          <ul className="flex flex-col grow space-y-3 ">
-            {allBooks.map((book) => (
-              <Book_component book={book}></Book_component>
-            ))}
-          </ul>
+        <div className="w-1/3 mr-10">
+          <div className="block fixed inset-0 top-[8rem] left-[max(0px,calc(50%-42.5rem))] right-auto w-[27rem] overflow-y-auto">
+            <nav className="lg:text-sm lg:leading-6 relative">
+              <h1 className="text-2xl  sticky top-0 bg-white">All Books:</h1>
+              <ul className="flex flex-col grow space-y-3 ">
+                {allBooks.map((book) => (
+                  <BookComponent book={book} />
+                ))}
+              </ul>
+            </nav>
+          </div>
         </div>
 
         {/* inner page */}
-        <div className="w-2/3 ml-10">
+        <div className="w-2/3 ml-10 h-fit">
           {children}
         </div>
       </div>

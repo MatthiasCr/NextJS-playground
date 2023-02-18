@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { adminBookPath, editBookPath } from '@/lib/routingHelpers'
 import { usePathname } from "next/navigation";
 
-function Book_component({ book }) {
+function BookComponent({ book }) {
 
   const pathname = usePathname();
 
@@ -25,4 +25,4 @@ function Book_component({ book }) {
   )
 }
 
-export default Book_component
+export default BookComponent

@@ -4,8 +4,8 @@ import Link from 'next/link'
 function Navbar() {
   return (
     <div className="bg-sky-700 shadow-2xl">
-      <nav className="max-w-screen-2xl mx-auto">
-        <div className="flex flex-row text-blue-100 font-sans">
+      <nav className="max-w-[90rem] mx-auto">
+        <div className="flex flex-row text-blue-100 font-sans h-[4rem]">
           <div className="m-2 grow flex justify-center gap-x-4">
             <Link className="p-3 text-xl  hover:text-white" href="/">Home</Link>
             <Link className="p-3 text-xl  hover:text-white" href="#">Other</Link>

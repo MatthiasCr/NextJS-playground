@@ -17,6 +17,9 @@ async function Edit({ params: { bookId } }) {
       <div className="my-5">
         {book.title}
       </div>
+      <div className="my-5">
+        {book.description}
+      </div>
       <Link className="btn btn-primary" href={editBookPath(bookId)}>
         Edit
       </Link>

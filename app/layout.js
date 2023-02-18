@@ -7,7 +7,7 @@ function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Navbar />
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[90rem] mx-auto">
           {children}
         </div>
       </body>
