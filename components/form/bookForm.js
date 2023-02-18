@@ -46,9 +46,13 @@ function BookForm({ oldBook }) {
       <TextSmall attribute="title" label="Title" state={title} setState={setTitle} />
       <TextSmall attribute="author" label="Author" state={author} setState={setAuthor} />
       <TextLarge attribute="description" label="Description" state={description} setState={setDescription} />
+      <TextLarge attribute="description" label="Description" state={description} setState={setDescription} />
+      <TextLarge attribute="description" label="Description" state={description} setState={setDescription} />
+      <TextLarge attribute="description" label="Description" state={description} setState={setDescription} />
+      <TextLarge attribute="description" label="Description" state={description} setState={setDescription} />
 
       <button className="btn btn-primary" type="submit">{`Publish ${oldBook != null ? "changes" : "book"}`}</button>
-    </form>
+    </form >
   )
 }
 
