@@ -9,6 +9,10 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      display: ['Source Serif Pro', 'Georgia', 'serif'],
+      body: ['Synonym', 'system-ui', 'sans-serif'],
+    },
     textUnderlineOffset: 4,
   },
   plugins: [],

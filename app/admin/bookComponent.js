@@ -13,7 +13,7 @@ function BookComponent({ book }) {
   return (
     <>
       <Link href={adminBookPath(book.id)}>
-        <li key={book.id} id={book.id} className={`${selected ? "bg-slate-200" : "bg-slate-50 hover:bg-slate-200"} truncate shadow-md  rounded-md p-2`}>
+        <li key={book.id} id={book.id} className={`${selected ? "bg-slate-200" : "bg-slate-50 hover:bg-slate-200"} truncate p-2`}>
           <b>{book.title}</b>
           <br />
           Author: {book.author}

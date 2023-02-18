@@ -5,6 +5,8 @@ import BookForm from '@/components/form/bookForm';
 import { adminPath } from '@/lib/routingHelpers';
 import Link from 'next/link';
 
+export const revalidate = 10;
+
 async function Edit({ params: { bookId } }) {
 
   const book = await getBook(Number(bookId))

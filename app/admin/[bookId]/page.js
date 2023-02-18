@@ -4,7 +4,9 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link';
 import { editBookPath } from '@/lib/routingHelpers';
 
-async function Edit({ params: { bookId } }) {
+export const revalidate = 10;
+
+async function Book({ params: { bookId } }) {
   const book = await getBook(Number(bookId))
 
   if (!book) {
@@ -27,7 +29,7 @@ async function Edit({ params: { bookId } }) {
   )
 }
 
-export default Edit
+export default Book
 
 export async function generateStaticParams() {
   const allBooks = await getAllBooks();
